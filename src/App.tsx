@@ -11,6 +11,7 @@ import {
   ColumnOrderState,
   FilterFn,
   Cell,
+  Column,
 } from "@tanstack/react-table";
 import { rankItem, compareItems } from "@tanstack/match-sorter-utils";
 
@@ -58,7 +59,7 @@ function DebouncedInput({
     }, debounce);
 
     return () => clearTimeout(timeout);
-  }, [value]);
+  }, [debounce, onChange, value]);
 
   return (
     <input
@@ -70,7 +71,7 @@ function DebouncedInput({
 }
 
 // 列过滤器组件
-function ColumnFilter({ column }: { column: any }) {
+function ColumnFilter({ column }: { column: Column<JsonData, unknown> }) {
   const columnFilterValue = column.getFilterValue();
 
   return (
@@ -78,7 +79,7 @@ function ColumnFilter({ column }: { column: any }) {
       value={(columnFilterValue ?? "") as string}
       onChange={(e) => column.setFilterValue(e.target.value)}
       placeholder={`Search ${column.id}...`}
-      className="w-full border p-1 text-sm"
+      className="w-full border p-0 text-xs"
     />
   );
 }
@@ -236,7 +237,7 @@ function EnhancedTable({ data }: EnhancedTableProps) {
                         <div
                           className={
                             header.column.getCanSort()
-                              ? "cursor-pointer select-none"
+                              ? "cursor-pointer select-none text-nowrap break-keep overflow-hidden "
                               : ""
                           }
                           onClick={header.column.getToggleSortingHandler()}
@@ -266,7 +267,7 @@ function EnhancedTable({ data }: EnhancedTableProps) {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className="border p-2"
+                    className="border p-1"
                     style={{
                       backgroundColor: getCellColor(cell),
                       color: getCellColor(cell)

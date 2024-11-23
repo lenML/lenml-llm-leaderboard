@@ -84,6 +84,8 @@ function ColumnFilter({ column }: { column: Column<JsonData, unknown> }) {
   );
 }
 
+const isNone = (x: any): x is undefined | null => x === null || x === undefined;
+
 interface EnhancedTableProps {
   data: JsonData[];
 }
@@ -152,6 +154,18 @@ function EnhancedTable({ data }: EnhancedTableProps) {
           return info.getValue();
         },
         enableSorting: true,
+        sortingFn: (rowA, rowB, columnId) => {
+          const valueA = rowA.getValue(columnId);
+          const valueB = rowB.getValue(columnId);
+
+          // 如果值为 null 或 undefined，将其视为 Infinity
+          const a = isNone(valueA) ? -Infinity : valueA;
+          const b = isNone(valueB) ? -Infinity : valueB;
+
+          if (a < b) return -1;
+          if (a > b) return 1;
+          return 0;
+        },
         // enableFiltering: true,
       });
     });
@@ -183,9 +197,13 @@ function EnhancedTable({ data }: EnhancedTableProps) {
   });
 
   function getCellColor(cell: Cell<JsonData, unknown>) {
+    const val = cell.getValue();
+    if (typeof val !== "number") {
+      return "#000";
+    }
     return minmaxs[cell.column.id]
       ? calculateColor(
-          cell.getValue() as number,
+          val,
           minmaxs[cell.column.id].min,
           minmaxs[cell.column.id].max,
           "#440154",
@@ -275,6 +293,7 @@ function EnhancedTable({ data }: EnhancedTableProps) {
                         ? getContrastColor(getCellColor(cell)!).toString()
                         : undefined,
                     }}
+                    title={`value: ${cell.getValue() ?? "none"}`}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
@@ -372,6 +391,20 @@ function dataPrepare(data: Record<string, any>) {
   return o1;
 }
 
+function header_key_fix<T>(items: T[]) {
+  let header_keys = items.map((x) => Object.keys(x)).flat();
+  header_keys = [...new Set(header_keys)];
+
+  for (const item of items) {
+    for (const k of header_keys) {
+      if (k in (item as any)) continue;
+      item[k] = null;
+    }
+  }
+
+  return items;
+}
+
 const datasets = [
   {
     name: "LenML-eval",
@@ -399,7 +432,7 @@ const ExamplePage = () => {
   //   "un-pblr-eval(~)": n_fixed(unquant(x["lr-eval"], x.quantization) / x.size),
   // }));
   const [_data, setData] = useState<any[]>(datasets[0].data);
-  const data = useMemo(() => _data.map(dataPrepare), [_data]);
+  const data = useMemo(() => header_key_fix(_data.map(dataPrepare)), [_data]);
   return (
     <div className="w-screen h-screen flex flex-col overflow-hidden">
       <header className="bg-slate-600 flex gap-2 px-2">

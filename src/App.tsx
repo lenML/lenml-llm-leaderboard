@@ -131,7 +131,24 @@ function EnhancedTable({ data }: EnhancedTableProps) {
             .split("_")
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(" "),
-        cell: (info) => info.getValue(),
+        cell: (info) => {
+          if (key === "model") {
+            // 如果是model，就尝试创建 huggingface 链接
+            const val = info.getValue();
+            if (typeof val === "string" && val.match(/.+?\/.+?/)) {
+              return (
+                <a
+                  className="underline"
+                  href={`https://huggingface.co/${val}`}
+                  target="_blank"
+                >
+                  {val}
+                </a>
+              );
+            }
+          }
+          return info.getValue();
+        },
         enableSorting: true,
         // enableFiltering: true,
       });
@@ -176,7 +193,7 @@ function EnhancedTable({ data }: EnhancedTableProps) {
   }
 
   return (
-    <div className="p-2 flex flex-col flex-1 overflow-hidden">
+    <div className="p-2 flex flex-col flex-1 overflow-hidden text-xs">
       {/* 全局搜索 */}
       <div className="mb-4">
         <DebouncedInput

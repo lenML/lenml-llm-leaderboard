@@ -1,0 +1,212 @@
+[
+  {
+    "model": "ggml-una-simplesmaug-34b-v1beta",
+    "size": 34.4,
+    "quantization": "iq3_ks",
+    "lh-eval": 43.26,
+    "lr-eval": 0.86
+  },
+  {
+    "model": "qwen2.5-32b-instruct-abliterated-v2",
+    "size": 32.8,
+    "quantization": "q3_k_m",
+    "lh-eval": 40.12,
+    "lr-eval": 0.05
+  },
+  {
+    "model": "qwen2.5-32b-agi",
+    "size": 32.8,
+    "quantization": "q3_k_m",
+    "lh-eval": 38.87,
+    "lr-eval": 0.16
+  },
+  {
+    "model": "josiefied-qwen2.5-14b-instruct-abliterated",
+    "size": 14.8,
+    "quantization": "q4_k_m",
+    "lh-eval": 37.61,
+    "lr-eval": 0.17
+  },
+  {
+    "model": "star-command-r-32b-v1",
+    "size": 32.8,
+    "quantization": "q3_k_m",
+    "lh-eval": 37.3,
+    "lr-eval": 0.75
+  },
+  {
+    "model": "aya-expanse-32b",
+    "size": 32.8,
+    "quantization": "q3_k_m",
+    "lh-eval": 37.3,
+    "lr-eval": 0.94
+  },
+  {
+    "model": "magnum-v4-27b",
+    "size": 27.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 36.36,
+    "lr-eval": 1.0
+  },
+  {
+    "model": "qwen2.5-coder-32b-instruct-abliterated",
+    "size": 32.8,
+    "quantization": "q3_k_m",
+    "lh-eval": 33.54,
+    "lr-eval": 0.86
+  },
+  {
+    "model": "huihui-ai/Qwen2.5-7B-Instruct-abliterated-v2",
+    "size": 7.62,
+    "quantization": "q4_k_m",
+    "lh-eval": 32.28,
+    "lr-eval": 0.13
+  },
+  {
+    "model": "gemma2-27b-instruct-abliterated",
+    "size": 27.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 32.0,
+    "lr-eval": 0.47
+  },
+  {
+    "model": "saiga_nemo_12b",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 30.4,
+    "lr-eval": 1.0
+  },
+  {
+    "model": "qwen2.5-coder-7b-instruct-abliterated",
+    "size": 7.62,
+    "quantization": "q4_k_m",
+    "lh-eval": 29.78,
+    "lr-eval": 0.22
+  },
+  {
+    "model": "josiefied-qwen2.5-7b-instruct-abliterated-v2",
+    "size": 7.62,
+    "quantization": "q3_k_m",
+    "lh-eval": 29.7,
+    "lr-eval": 0.08
+  },
+  {
+    "model": "gemma-2-ifable-9b",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "lh-eval": 29.5,
+    "lr-eval": 0.88
+  },
+  {
+    "model": "tiger-gemma-9b-v3",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "lh-eval": 29.46,
+    "lr-eval": 1
+  },
+  {
+    "model": "gemma-2-9b-it-abliterated",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "lh-eval": 27.27,
+    "lr-eval": 0.11
+  },
+  {
+    "model": "gemma-2-9b-it-simpo",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "lh-eval": 26.6,
+    "lr-eval": 0.88
+  },
+  {
+    "model": "aya-expanse-8b",
+    "size": 8.03,
+    "quantization": "q4_k_m",
+    "lh-eval": 26.01,
+    "lr-eval": 0.916
+  },
+  {
+    "model": "hermes-3-llama-3.1-8b-lorablated",
+    "size": 8.03,
+    "quantization": "q4_k_m",
+    "lh-eval": 25.7,
+    "lr-eval": 0.5
+  },
+  {
+    "model": "mistral-small-instruct-2409-abliterated",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 22.88,
+    "lr-eval": 0.86
+  },
+  {
+    "model": "nemomix-unleashed-12b",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 19.12,
+    "lr-eval": 0.72
+  },
+  {
+    "model": "qwen2.5-3b-instruct-abliterated",
+    "size": 3.09,
+    "quantization": "q6_k",
+    "lh-eval": 17.86,
+    "lr-eval": 0.22
+  },
+  {
+    "model": "gemma-2-2b-it-abliterated",
+    "size": 2.61,
+    "quantization": "q8_0",
+    "lh-eval": 16.3,
+    "lr-eval": 0.22
+  },
+  {
+    "model": "mistral-nemo-instruct-2407-abliterated",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "lh-eval": 15.67,
+    "lr-eval": 0.27
+  },
+  {
+    "model": "nemotron-mini-4b-instruct",
+    "size": 4.19,
+    "quantization": "q6_k",
+    "lh-eval": 14.42,
+    "lr-eval": 0.77
+  },
+  {
+    "model": "phi-3.5-mini-instruct_uncensored",
+    "size": 3.82,
+    "quantization": "q6_k",
+    "lh-eval": 3.44,
+    "lr-eval": 0.083
+  },
+  {
+    "model": "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF",
+    "size": 1.1,
+    "quantization": "Q4_0",
+    "lh-eval": 2.2,
+    "lr-eval": 1
+  },
+  {
+    "model": "c4ai-command-r-plus-imat",
+    "size": 104,
+    "quantization": "iq1_m",
+    "lh-eval": 32,
+    "lr-eval": null
+  },
+  {
+    "model": "thebeagle-v2beta-32b-mgs",
+    "size": 32.8,
+    "quantization": "q4_k_s",
+    "lh-eval": 41.37,
+    "lr-eval": 0.94
+  },
+  {
+    "model": "gemma-2-2b-opus-instruct",
+    "size": 2.61,
+    "quantization": "q6_k",
+    "lh-eval": 19.12,
+    "lr-eval": 1
+  }
+]

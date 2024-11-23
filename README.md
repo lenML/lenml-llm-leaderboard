@@ -1,2 +1,2 @@
 # lenml-leaderboard
-lenml llm leaderboard
+leaderboard

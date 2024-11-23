@@ -16,7 +16,7 @@ import {
 import { rankItem, compareItems } from "@tanstack/match-sorter-utils";
 
 import evalData from "./data/eval-data.json";
-import ollData from "./data/open-llm-leaderboard-1122.json";
+import ollData from "./data/open-llm-leaderboard-1122-fixed.json";
 import { unquant } from "./data/unquant";
 import Dropdown from "./components/Dropdown";
 import { useMemo, useState } from "react";
@@ -139,9 +139,10 @@ function EnhancedTable({ data }: EnhancedTableProps) {
             if (typeof val === "string" && val.match(/.+?\/.+?/)) {
               return (
                 <a
-                  className="underline"
+                  className="text-blue-300 w-60 flex break-all"
                   href={`https://huggingface.co/${val}`}
                   target="_blank"
+                  title={`https://huggingface.co/${val}`}
                 >
                   {val}
                 </a>

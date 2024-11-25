@@ -75,7 +75,8 @@
     "l_hardcore": 32.0,
     "l_reject": 0.47,
     "l_long": 74.47939883518455,
-    "l_creative": 70.80000000000001
+    "l_creative": 70.80000000000001,
+    "l_acg": 33.88
   },
   {
     "model": "IlyaGusev/saiga_nemo_12b",
@@ -310,6 +311,9 @@
     "size": 12.2,
     "quantization": "q4_k_s",
     "l_hardcore": 31.974921630094045,
-    "l_reject": 1.0
+    "l_reject": 1.0,
+    "l_long": 51.41011604945617,
+    "l_creative": 93.16666666666667,
+    "l_acg": 7.77
   }
 ]

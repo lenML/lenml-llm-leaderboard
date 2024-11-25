@@ -35,14 +35,14 @@
   },
   {
     "model": "TheDrummer/Star-Command-R-32B-v1",
-    "size": 32.8,
+    "size": 32.3,
     "quantization": "q3_k_m",
     "l_hardcore": 37.3,
     "l_reject": 0.75
   },
   {
     "model": "CohereForAI/aya-expanse-32b",
-    "size": 32.8,
+    "size": 32.3,
     "quantization": "q3_k_m",
     "l_hardcore": 37.3,
     "l_reject": 0.94
@@ -315,5 +315,25 @@
     "l_long": 51.41011604945617,
     "l_creative": 93.16666666666667,
     "l_acg": 7.77
+  },
+  {
+    "model": "DavidAU/L3-Dark_Mistress-The_Guilty_Pen-Uncensored-17.4B-GGUF",
+    "size": 17.4,
+    "quantization": "q4_k_m",
+    "l_hardcore": 12.225705329153605,
+    "l_reject": 0.4166666666666667,
+    "l_long": 46.52916207497656,
+    "l_creative": 87,
+    "l_acg": 4.44
+  },
+  {
+    "model": "CohereForAI/c4ai-command-r-08-2024",
+    "size": 32.3,
+    "quantization": "q4_k_s",
+    "l_hardcore": 36.36,
+    "l_reject": 0.55,
+    "l_long": 66.02860674582767,
+    "l_creative": 92.09999999999998,
+    "l_acg": 27.77
   }
 ]

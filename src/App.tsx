@@ -19,12 +19,13 @@ import evalData from "./data/eval-data.json";
 import ollData from "./data/open-llm-leaderboard-1122-fixed.json";
 import { unquant } from "./data/unquant";
 import Dropdown from "./components/Dropdown";
-import { useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import {
   calculateColor,
   getComplementaryColor,
   getContrastColor,
 } from "./components/colors";
+import { RangeSlider } from "./components/RangeSlider";
 
 // 通用类型定义
 type JsonData = Record<string, any>;
@@ -70,8 +71,19 @@ function DebouncedInput({
   );
 }
 
+function Tips({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative group inline-block">
+      <span className="cursor-pointer">❔</span>
+      <div className="absolute left-0 z-10 hidden w-max px-2 py-2 text-sm text-white bg-gray-800 rounded shadow-md group-hover:block border">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 // 列过滤器组件
-function ColumnFilter({ column }: { column: Column<JsonData, unknown> }) {
+function HeaderFilter({ column }: { column: Column<JsonData, unknown> }) {
   const columnFilterValue = column.getFilterValue();
 
   return (
@@ -90,38 +102,58 @@ interface EnhancedTableProps {
   data: JsonData[];
 }
 
-function EnhancedTable({ data }: EnhancedTableProps) {
+function EnhancedTable({ data: _data }: EnhancedTableProps) {
   const minmaxs = useMemo(() => {
     // 统计各个列的最大最小值
-    const num_headers = Object.keys(data[0]).filter(
-      (key) => !isNaN(Number(data[0][key]))
+    const num_headers = Object.keys(_data[0]).filter(
+      (key) => !isNaN(Number(_data[0][key]))
     );
     const ret = {} as Record<string, { max: number; min: number }>;
 
     for (const header of num_headers) {
       const max = Math.max(
-        ...data.map((d) => d[header]).filter(Number.isFinite)
+        ..._data.map((d) => d[header]).filter(Number.isFinite)
       );
       const min = Math.min(
-        ...data.map((d) => d[header]).filter(Number.isFinite)
+        ..._data.map((d) => d[header]).filter(Number.isFinite)
       );
       ret[header] = { max, min };
     }
 
     return ret;
-  }, [data]);
+  }, [_data]);
 
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
   const [globalFilter, setGlobalFilter] = React.useState("");
   const [columnVisibility, setColumnVisibility] = React.useState({});
+  useLayoutEffect(() => {
+    const ret = {} as Record<string, boolean>;
+    Object.keys(_data[0])
+      .filter((x) => x.startsWith("pb-") || x.startsWith("uq-"))
+      .forEach((key) => {
+        ret[key] = false;
+      });
+    // 如果 quantization 全为空也隐藏
+    if (_data[0].quantization === undefined) {
+      ret["quantization"] = false;
+    }
+    setColumnVisibility(ret);
+  }, [_data]);
+
   const [columnOrder, setColumnOrder] = React.useState<ColumnOrderState>([]);
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
     pageSize: 25,
   });
 
+  const [sizeRange, setSizeRange] = useState([0, 500] as [number, number]);
+  const data = React.useMemo(() => {
+    return _data.filter(
+      (row) => row.size >= sizeRange[0] && row.size <= sizeRange[1]
+    );
+  }, [_data, sizeRange]);
   // 自动生成列配置
   const generateColumns = React.useMemo(() => {
     if (data.length === 0) return [];
@@ -224,22 +256,51 @@ function EnhancedTable({ data }: EnhancedTableProps) {
         />
       </div>
 
-      {/* 列可见性控制 */}
-      <div className="mb-4 p-2 border rounded">
-        <div className="font-bold mb-2">Toggle Columns:</div>
-        <div className="flex flex-wrap gap-2">
-          {table.getAllLeafColumns().map((column) => (
-            <div className="inline" key={column.id}>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={column.getIsVisible()}
-                  onChange={column.getToggleVisibilityHandler()}
-                />
-                <span className="ml-2">{column.id}</span>
-              </label>
-            </div>
-          ))}
+      <div className="flex">
+        {/* 模型大小 range */}
+        <div className="mb-4 p-2 border">
+          <div className="font-bold mb-2">Model Size Range:</div>
+          <div className="flex flex-wrap gap-2">
+            <RangeSlider
+              defaultValue={sizeRange}
+              onChange={(value) => {
+                const min = Math.min(...value);
+                const max = Math.max(...value);
+                setSizeRange([min, max]);
+              }}
+            />
+          </div>
+        </div>
+
+        {/* 列可见性控制 */}
+        <div className="mb-4 p-2 border flex-1">
+          <div className="font-bold mb-2">
+            Toggle Columns:{" "}
+            <Tips>
+              <pre>
+                <code>
+                  `uq-` 开头的数据为 反量化
+                  之后的数据，简单通过ppl性能反推出原始模型的性能。
+                  <br />
+                  `pb-` 开头的数据为以模型大小b为单位每个单位可以得到的分数。
+                </code>
+              </pre>
+            </Tips>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {table.getAllLeafColumns().map((column) => (
+              <div className="inline" key={column.id}>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={column.getIsVisible()}
+                    onChange={column.getToggleVisibilityHandler()}
+                  />
+                  <span className="ml-2">{column.id}</span>
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -271,7 +332,7 @@ function EnhancedTable({ data }: EnhancedTableProps) {
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
                         {header.column.getCanFilter() ? (
-                          <ColumnFilter column={header.column} />
+                          <HeaderFilter column={header.column} />
                         ) : null}
                       </>
                     )}
@@ -372,7 +433,7 @@ function dataPrepare(data: Record<string, any>) {
           if (typeof v !== "number") {
             return null;
           }
-          return [`un-${k}`, unquant(v, quantization)];
+          return [`uq-${k}`, unquant(v, quantization)];
         })
         .filter(Boolean) as any[])
     : [];
@@ -382,8 +443,8 @@ function dataPrepare(data: Record<string, any>) {
     size,
     quantization,
     ...others,
-    // ...Object.fromEntries(pbs),
-    // ...Object.fromEntries(unquants),
+    ...Object.fromEntries(pbs),
+    ...Object.fromEntries(unquants),
   };
 
   for (const [k, v] of Object.entries(o1)) {

@@ -366,12 +366,16 @@ function dataPrepare(data: Record<string, any>) {
     })
     .filter(Boolean) as any[];
   // 计算 量化分数，如果有量化的话
-  // const unquant = quantization ? Object.entries(others).map(([k, v]) => {
-  //   if (typeof v !== 'number') {
-  //     return null;
-  //   }
-  //   return [`un-${k}`,v / size]
-  // }).filter(Boolean) as any[] : [];
+  const unquants = quantization
+    ? (Object.entries(others)
+        .map(([k, v]) => {
+          if (typeof v !== "number") {
+            return null;
+          }
+          return [`un-${k}`, unquant(v, quantization)];
+        })
+        .filter(Boolean) as any[])
+    : [];
 
   const o1 = {
     model,
@@ -379,6 +383,7 @@ function dataPrepare(data: Record<string, any>) {
     quantization,
     ...others,
     ...Object.fromEntries(pbs),
+    // ...Object.fromEntries(unquants),
   };
 
   for (const [k, v] of Object.entries(o1)) {

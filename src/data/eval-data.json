@@ -16,7 +16,8 @@
     "l_hardcore": 40.12,
     "l_reject": 0.05,
     "l_long": 86.70626347384285,
-    "l_creative": 88.66666666666667
+    "l_creative": 88.66666666666667,
+    "l_acg": 26.66
   },
   {
     "model": "AiCloser/Qwen2.5-32B-AGI",

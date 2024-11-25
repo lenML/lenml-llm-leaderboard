@@ -382,7 +382,7 @@ function dataPrepare(data: Record<string, any>) {
     size,
     quantization,
     ...others,
-    ...Object.fromEntries(pbs),
+    // ...Object.fromEntries(pbs),
     // ...Object.fromEntries(unquants),
   };
 

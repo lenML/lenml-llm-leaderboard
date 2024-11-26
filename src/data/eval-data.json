@@ -335,5 +335,15 @@
     "l_long": 66.02860674582767,
     "l_creative": 92.09999999999998,
     "l_acg": 27.77
+  },
+  {
+    "model": "grok-beta",
+    "size": 314,
+    "quantization": "f16",
+    "l_hardcore": 50.470219435736674,
+    "l_reject": null,
+    "l_long": null,
+    "l_creative": null,
+    "l_acg": 14.44
   }
 ]

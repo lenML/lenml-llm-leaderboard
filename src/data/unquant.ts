@@ -81,6 +81,18 @@ const quant_map = {
       performance_ratio: 1.0,
     },
   },
+  F16: {
+    F16: {
+      bits: 16.0,
+      performance_ratio: 1.0,
+    },
+  },
+  F32: {
+    F32: {
+      bits: 32.0,
+      performance_ratio: 1.0,
+    },
+  },
 } as const;
 
 // 就是简单的根据映射表估算出一个大概的原始分数

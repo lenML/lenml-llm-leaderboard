@@ -270,6 +270,8 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
       : undefined;
   }
 
+  const [showFilters, setShowFilters] = useState(false);
+
   return (
     <div className="p-2 flex flex-col flex-1 overflow-hidden text-xs">
       {/* 全局搜索 */}
@@ -282,50 +284,65 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
         />
       </div>
 
-      <div className="flex">
-        {/* 模型大小 range */}
-        <div className="mb-4 p-2 border">
-          <div className="font-bold mb-2">Model Size Range:</div>
-          <div className="flex flex-wrap gap-2">
-            <RangeSlider
-              defaultValue={sizeRange}
-              onChange={(value) => {
-                const min = Math.min(...value);
-                const max = Math.max(...value);
-                setSizeRange([min, max]);
-              }}
-            />
-          </div>
+      <div className="flex flex-col mb-4">
+        <div
+          className="p-2 border cursor-pointer"
+          onClick={() => {
+            setShowFilters(!showFilters);
+          }}
+        >
+          Table Filters {showFilters ? "🔽" : "🔼"}
         </div>
-
-        {/* 列可见性控制 */}
-        <div className="mb-4 p-2 border flex-1">
-          <div className="font-bold mb-2">
-            Toggle Columns:{" "}
-            <Tips>
-              <pre>
-                <code>
-                  `uq-` 开头的数据为 反量化
-                  之后的数据，简单通过ppl性能反推出原始模型的性能。
-                  <br />
-                  `pb-` 开头的数据为以模型大小b为单位每个单位可以得到的分数。
-                </code>
-              </pre>
-            </Tips>
+        <div
+          className="flex"
+          style={{
+            display: showFilters ? undefined : "none",
+          }}
+        >
+          {/* 模型大小 range */}
+          <div className="p-2 border">
+            <div className="font-bold mb-2">Model Size Range:</div>
+            <div className="flex flex-wrap gap-2">
+              <RangeSlider
+                defaultValue={sizeRange}
+                onChange={(value) => {
+                  const min = Math.min(...value);
+                  const max = Math.max(...value);
+                  setSizeRange([min, max]);
+                }}
+              />
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {table.getAllLeafColumns().map((column) => (
-              <div className="inline" key={column.id}>
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={column.getIsVisible()}
-                    onChange={column.getToggleVisibilityHandler()}
-                  />
-                  <span className="ml-2">{column.id}</span>
-                </label>
-              </div>
-            ))}
+
+          {/* 列可见性控制 */}
+          <div className="p-2 border flex-1">
+            <div className="font-bold mb-2">
+              Toggle Columns:{" "}
+              <Tips>
+                <pre>
+                  <code>
+                    `uq-` 开头的数据为 反量化
+                    之后的数据，简单通过ppl性能反推出原始模型的性能。
+                    <br />
+                    `pb-` 开头的数据为以模型大小b为单位每个单位可以得到的分数。
+                  </code>
+                </pre>
+              </Tips>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {table.getAllLeafColumns().map((column) => (
+                <div className="inline" key={column.id}>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={column.getIsVisible()}
+                      onChange={column.getToggleVisibilityHandler()}
+                    />
+                    <span className="ml-2">{column.id}</span>
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

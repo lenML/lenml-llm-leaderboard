@@ -27,6 +27,21 @@ import {
 } from "./components/colors";
 import { RangeSlider } from "./components/RangeSlider";
 
+function escapeRegExp(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function fuzzyMatch(pattern: string, str: string) {
+  pattern =
+    ".*" +
+    pattern
+      .split("")
+      .map((l: string) => `${escapeRegExp(l)}.*`)
+      .join("");
+  const re = new RegExp(pattern);
+  return re.test(str);
+}
+
 // 通用类型定义
 type JsonData = Record<string, any>;
 
@@ -199,6 +214,17 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
           return 0;
         },
         // enableFiltering: true,
+        filterFn: (row, columnId, value, addMeta) => {
+          const val = row.getValue(columnId);
+          if (typeof val === "string") {
+            return fuzzyMatch(String(value), val);
+          }
+          if (typeof val === "number") {
+            return Math.floor(val) === Math.floor(Number(value));
+          }
+
+          return false;
+        },
       });
     });
   }, [data]);

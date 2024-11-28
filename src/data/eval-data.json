@@ -7,7 +7,8 @@
     "l_reject": 0.86,
     "l_creative": null,
     "l_long": null,
-    "l_acg": null
+    "l_acg": null,
+    "l_np": null
   },
   {
     "model": "zetasepic/Qwen2.5-32B-Instruct-abliterated-v2",
@@ -17,7 +18,8 @@
     "l_reject": 0.05,
     "l_long": 86.70626347384285,
     "l_creative": 88.66666666666667,
-    "l_acg": 26.66
+    "l_acg": 26.66,
+    "l_np": 47.47022721678598
   },
   {
     "model": "AiCloser/Qwen2.5-32B-AGI",
@@ -76,7 +78,8 @@
     "l_reject": 0.47,
     "l_long": 74.47939883518455,
     "l_creative": 70.80000000000001,
-    "l_acg": 33.88
+    "l_acg": 33.88,
+    "l_np": 44.61233351093367
   },
   {
     "model": "IlyaGusev/saiga_nemo_12b",
@@ -144,7 +147,8 @@
     "l_reject": 0.5,
     "l_long": 47.34381178852976,
     "l_creative": 86.76666666666667,
-    "l_acg": 3.88
+    "l_acg": 3.88,
+    "l_np": 25.99390454830381
   },
   {
     "model": "byroneverson/Mistral-Small-Instruct-2409-abliterated",
@@ -226,7 +230,8 @@
     "l_reject": 1,
     "l_long": 54.598902412282484,
     "l_creative": 87.63333333333333,
-    "l_acg": 6.11
+    "l_acg": 6.11,
+    "l_np": 12.43747843667888
   },
   {
     "model": "lenML/aya-expanse-8b-abliterated",
@@ -236,7 +241,8 @@
     "l_reject": 0.52,
     "l_long": 73.36891621336788,
     "l_creative": 93.89999999999999,
-    "l_acg": 13.88
+    "l_acg": 13.88,
+    "l_np": 0.7667032015154481
   },
   {
     "model": "w4r10ck/SOLAR-10.7B-Instruct-v1.0-uncensored",
@@ -274,7 +280,8 @@
     "l_reject": 0.583,
     "l_long": 47.70607331750326,
     "l_creative": 63.6,
-    "l_acg": 0.55
+    "l_acg": 0.55,
+    "l_np": 0.01935321914181979
   },
   {
     "model": "lemon07r/Gemma-2-Ataraxy-v2-9B",
@@ -284,7 +291,8 @@
     "l_reject": 0.611,
     "l_long": 58.17430575196378,
     "l_creative": 92.23333333333333,
-    "l_acg": 22.22
+    "l_acg": 22.22,
+    "l_np": 30.63899690139084
   },
   {
     "model": "anthracite-org/magnum-v4-12b",
@@ -294,7 +302,8 @@
     "l_reject": 1.0,
     "l_long": 45.684937668977135,
     "l_creative": 75.43333333333332,
-    "l_acg": 15.55
+    "l_acg": 15.55,
+    "l_np": 27.99894982188303
   },
   {
     "model": "nbeerbower/Qwen2.5-Gutenberg-Doppel-14B",
@@ -314,7 +323,8 @@
     "l_reject": 1.0,
     "l_long": 51.41011604945617,
     "l_creative": 93.16666666666667,
-    "l_acg": 7.77
+    "l_acg": 7.77,
+    "l_np": 30.246717820430398
   },
   {
     "model": "DavidAU/L3-Dark_Mistress-The_Guilty_Pen-Uncensored-17.4B-GGUF",
@@ -334,16 +344,40 @@
     "l_reject": 0.55,
     "l_long": 66.02860674582767,
     "l_creative": 92.09999999999998,
-    "l_acg": 27.77
+    "l_acg": 27.77,
+    "l_np": 22.37767346013845
   },
   {
     "model": "grok-beta",
     "size": 314,
     "quantization": "f16",
     "l_hardcore": 50.470219435736674,
-    "l_reject": null,
-    "l_long": null,
-    "l_creative": null,
-    "l_acg": 14.44
+    "l_reject": 1,
+    "l_long": 74.74067294475033,
+    "l_creative": 90.13333333333333,
+    "l_acg": 14.44,
+    "l_np": 45.86
+  },
+  {
+    "model": "anthracite-org/magnum-v4-9b",
+    "size": 9.24,
+    "quantization": "q4_k_s",
+    "l_hardcore": 34.90566037735849,
+    "l_reject": 0.8888888888888888,
+    "l_long": 54.97595506523796,
+    "l_creative": 81.13333333333334,
+    "l_acg": 20.555555555555554,
+    "l_np": 27.04019756178699
+  },
+  {
+    "model": "anthracite-org/magnum-v4-22b",
+    "size": 22.2,
+    "quantization": "q4_k_s",
+    "l_hardcore": 27.67295597484277,
+    "l_reject": 0.9722222222222222,
+    "l_long": 56.87408151760139,
+    "l_creative": 84.93333333333334,
+    "l_acg": 3.88888888888889,
+    "l_np": 16.781240945173654
   }
 ]

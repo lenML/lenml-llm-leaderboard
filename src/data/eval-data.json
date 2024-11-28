@@ -4,7 +4,7 @@
     "size": 34.4,
     "quantization": "iq3_ks",
     "l_hardcore": 43.26,
-    "l_reject": 0.86,
+    "l_reject_rv": 14.000000000000002,
     "l_creative": null,
     "l_long": null,
     "l_acg": null,
@@ -15,369 +15,437 @@
     "size": 32.8,
     "quantization": "q3_k_m",
     "l_hardcore": 40.12,
-    "l_reject": 0.05,
     "l_long": 86.70626347384285,
     "l_creative": 88.66666666666667,
     "l_acg": 26.66,
-    "l_np": 47.47022721678598
+    "l_np": 47.47022721678598,
+    "l_reject_rv": 95
   },
   {
     "model": "AiCloser/Qwen2.5-32B-AGI",
     "size": 32.8,
     "quantization": "q3_k_m",
     "l_hardcore": 38.87,
-    "l_reject": 0.16
+    "l_reject_rv": 84
   },
   {
     "model": "Goekdeniz-Guelmez/Josiefied-Qwen2.5-14B-Instruct-abliterated-v4",
     "size": 14.8,
     "quantization": "q4_k_m",
     "l_hardcore": 37.61,
-    "l_reject": 0.17
+    "l_reject_rv": 83
   },
   {
     "model": "TheDrummer/Star-Command-R-32B-v1",
     "size": 32.3,
     "quantization": "q3_k_m",
     "l_hardcore": 37.3,
-    "l_reject": 0.75
+    "l_reject_rv": 25
   },
   {
     "model": "CohereForAI/aya-expanse-32b",
     "size": 32.3,
     "quantization": "q3_k_m",
     "l_hardcore": 37.3,
-    "l_reject": 0.94
+    "l_reject_rv": 6.000000000000005
   },
   {
     "model": "anthracite-org/magnum-v4-27b",
     "size": 27.2,
     "quantization": "q4_k_m",
     "l_hardcore": 36.36,
-    "l_reject": 1.0
+    "l_reject_rv": 0
   },
   {
     "model": "huihui-ai/Qwen2.5-Coder-32B-Instruct-abliterated",
     "size": 32.8,
     "quantization": "q3_k_m",
     "l_hardcore": 33.54,
-    "l_reject": 0.86
+    "l_reject_rv": 14.000000000000002
   },
   {
     "model": "huihui-ai/Qwen2.5-7B-Instruct-abliterated-v2",
     "size": 7.62,
     "quantization": "q4_k_m",
     "l_hardcore": 32.28,
-    "l_reject": 0.13
+    "l_reject_rv": 87
   },
   {
     "model": "byroneverson/gemma-2-27b-it-abliterated",
     "size": 27.2,
     "quantization": "q4_k_m",
-    "l_hardcore": 32.0,
-    "l_reject": 0.47,
+    "l_hardcore": 32,
     "l_long": 74.47939883518455,
     "l_creative": 70.80000000000001,
     "l_acg": 33.88,
-    "l_np": 44.61233351093367
+    "l_np": 44.61233351093367,
+    "l_reject_rv": 53
   },
   {
     "model": "IlyaGusev/saiga_nemo_12b",
     "size": 12.2,
     "quantization": "q4_k_m",
     "l_hardcore": 30.4,
-    "l_reject": 1.0
+    "l_reject_rv": 0
   },
   {
     "model": "huihui-ai/Qwen2.5-Coder-7B-Instruct-abliterated",
     "size": 7.62,
     "quantization": "q4_k_m",
     "l_hardcore": 29.78,
-    "l_reject": 0.22
+    "l_reject_rv": 78
   },
   {
     "model": "mlx-community/Josiefied-Qwen2.5-7B-Instruct-abliterated-v2",
     "size": 7.62,
     "quantization": "q3_k_m",
     "l_hardcore": 29.7,
-    "l_reject": 0.08
+    "l_reject_rv": 92
   },
   {
     "model": "ifable/gemma-2-Ifable-9B",
     "size": 9.24,
     "quantization": "q4_k_m",
     "l_hardcore": 29.5,
-    "l_reject": 0.88
+    "l_reject_rv": 12
   },
   {
     "model": "TheDrummer/Tiger-Gemma-9B-v3",
     "size": 9.24,
     "quantization": "q4_k_m",
     "l_hardcore": 29.46,
-    "l_reject": 1
-  },
-  {
-    "model": "IlyaGusev/gemma-2-9b-it-abliterated",
-    "size": 9.24,
-    "quantization": "q4_k_m",
-    "l_hardcore": 27.27,
-    "l_reject": 0.11,
-    "l_long": 74.70141995258126,
-    "l_creative": 65.4
+    "l_reject_rv": 0
   },
   {
     "model": "princeton-nlp/gemma-2-9b-it-SimPO",
     "size": 9.24,
     "quantization": "q4_k_m",
     "l_hardcore": 26.6,
-    "l_reject": 0.88
+    "l_reject_rv": 12
   },
   {
     "model": "CohereForAI/aya-expanse-8b",
     "size": 8.03,
     "quantization": "q4_k_m",
     "l_hardcore": 26.01,
-    "l_reject": 0.916
+    "l_reject_rv": 8.399999999999997
   },
   {
     "model": "mlabonne/Hermes-3-Llama-3.1-8B-lorablated",
     "size": 8.03,
     "quantization": "q4_k_m",
     "l_hardcore": 25.7,
-    "l_reject": 0.5,
     "l_long": 47.34381178852976,
     "l_creative": 86.76666666666667,
     "l_acg": 3.88,
-    "l_np": 25.99390454830381
+    "l_np": 25.99390454830381,
+    "l_reject_rv": 50
   },
   {
     "model": "byroneverson/Mistral-Small-Instruct-2409-abliterated",
     "size": 12.2,
     "quantization": "q4_k_m",
     "l_hardcore": 22.88,
-    "l_reject": 0.86
+    "l_reject_rv": 14.000000000000002
   },
   {
     "model": "MarinaraSpaghetti/NemoMix-Unleashed-12B",
     "size": 12.2,
     "quantization": "q4_k_m",
     "l_hardcore": 19.12,
-    "l_reject": 0.72
+    "l_reject_rv": 28.000000000000004
   },
   {
     "model": "huihui-ai/Qwen2.5-3B-Instruct-abliterated",
     "size": 3.09,
     "quantization": "q6_k",
     "l_hardcore": 17.86,
-    "l_reject": 0.22
+    "l_reject_rv": 78
   },
   {
     "model": "IlyaGusev/gemma-2-2b-it-abliterated",
     "size": 2.61,
     "quantization": "q8_0",
     "l_hardcore": 16.3,
-    "l_reject": 0.22,
     "l_long": 70.86505116479596,
-    "l_creative": 78.06666666666666
+    "l_creative": 78.06666666666666,
+    "l_reject_rv": 78
   },
   {
     "model": "natong19/Mistral-Nemo-Instruct-2407-abliterated",
     "size": 12.2,
     "quantization": "q4_k_m",
     "l_hardcore": 15.67,
-    "l_reject": 0.27
+    "l_reject_rv": 73
   },
   {
     "model": "nvidia/Nemotron-4-Mini-Hindi-4B-Instruct",
     "size": 4.19,
     "quantization": "q6_k",
     "l_hardcore": 14.42,
-    "l_reject": 0.77
+    "l_reject_rv": 23
   },
   {
     "model": "SicariusSicariiStuff/Phi-3.5-mini-instruct_Uncensored",
     "size": 3.82,
     "quantization": "q6_k",
     "l_hardcore": 3.44,
-    "l_reject": 0.083
+    "l_reject_rv": 91.7
   },
   {
     "model": "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF",
     "size": 1.1,
     "quantization": "Q4_0",
     "l_hardcore": 2.2,
-    "l_reject": 1
+    "l_reject_rv": 0
   },
   {
     "model": "CohereForAI/c4ai-command-r-plus",
     "size": 104,
     "quantization": "iq1_m",
     "l_hardcore": 32,
-    "l_reject": null
+    "l_reject_rv": 100
   },
   {
     "model": "fblgit/TheBeagle-v2beta-32B-MGS",
     "size": 32.8,
     "quantization": "q4_k_s",
     "l_hardcore": 41.37,
-    "l_reject": 0.94
+    "l_reject_rv": 6.000000000000005
   },
   {
     "model": "SaisExperiments/Gemma-2-2B-Opus-Instruct",
     "size": 2.61,
     "quantization": "q6_k",
     "l_hardcore": 19.12,
-    "l_reject": 1,
     "l_long": 54.598902412282484,
     "l_creative": 87.63333333333333,
     "l_acg": 6.11,
-    "l_np": 12.43747843667888
+    "l_np": 12.43747843667888,
+    "l_reject_rv": 0
   },
   {
     "model": "lenML/aya-expanse-8b-abliterated",
     "size": 8.03,
     "quantization": "q4_k_m",
     "l_hardcore": 25.391849529780565,
-    "l_reject": 0.52,
     "l_long": 73.36891621336788,
     "l_creative": 93.89999999999999,
     "l_acg": 13.88,
-    "l_np": 0.7667032015154481
+    "l_np": 0.7667032015154481,
+    "l_reject_rv": 48
   },
   {
     "model": "w4r10ck/SOLAR-10.7B-Instruct-v1.0-uncensored",
     "size": 10.7,
     "quantization": "q4_k_m",
     "l_hardcore": 12.539184952978054,
-    "l_reject": 0.01,
     "l_long": 39.61161443738214,
     "l_creative": 97.89999999999999,
-    "l_acg": 6.66
+    "l_acg": 6.66,
+    "l_reject_rv": 99
   },
   {
     "model": "AALF/gemma-2-27b-it-SimPO-37K-100steps",
     "size": 27.2,
     "quantization": "q4_k_s",
     "l_hardcore": 31.03448275862069,
-    "l_reject": 0.8611,
     "l_long": 72.7901405321862,
-    "l_creative": 91.76666666666667
+    "l_creative": 91.76666666666667,
+    "l_reject_rv": 13.890000000000002
   },
   {
     "model": "Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24",
     "size": 12.2,
     "quantization": "q4_k_s",
     "l_hardcore": 32.288401253918494,
-    "l_reject": 0.8611,
     "l_long": 70.07528015634581,
-    "l_creative": 75.96666666666668
+    "l_creative": 75.96666666666668,
+    "l_reject_rv": 13.890000000000002
   },
   {
     "model": "Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct",
     "size": 0.494,
     "quantization": "q6_k",
     "l_hardcore": 14.420062695924765,
-    "l_reject": 0.583,
     "l_long": 47.70607331750326,
     "l_creative": 63.6,
     "l_acg": 0.55,
-    "l_np": 0.01935321914181979
+    "l_np": 0.01935321914181979,
+    "l_reject_rv": 41.7
   },
   {
     "model": "lemon07r/Gemma-2-Ataraxy-v2-9B",
     "size": 9.24,
     "quantization": "q4_k_s",
     "l_hardcore": 25.705329153605017,
-    "l_reject": 0.611,
     "l_long": 58.17430575196378,
     "l_creative": 92.23333333333333,
     "l_acg": 22.22,
-    "l_np": 30.63899690139084
+    "l_np": 30.63899690139084,
+    "l_reject_rv": 38.9
   },
   {
     "model": "anthracite-org/magnum-v4-12b",
     "size": 12.2,
     "quantization": "q4_k_s",
     "l_hardcore": 40.75235109717868,
-    "l_reject": 1.0,
     "l_long": 45.684937668977135,
     "l_creative": 75.43333333333332,
     "l_acg": 15.55,
-    "l_np": 27.99894982188303
+    "l_np": 27.99894982188303,
+    "l_reject_rv": 0
   },
   {
     "model": "nbeerbower/Qwen2.5-Gutenberg-Doppel-14B",
     "size": 14.8,
     "quantization": "q4_k_s",
     "l_hardcore": 37.61755485893417,
-    "l_reject": 0.94,
     "l_long": 61.82586432518972,
     "l_creative": 93.10000000000001,
-    "l_acg": 28.33
+    "l_acg": 28.33,
+    "l_reject_rv": 6.000000000000005
   },
   {
     "model": "IlyaGusev/saiga_nemo_12b-v3",
     "size": 12.2,
     "quantization": "q4_k_s",
     "l_hardcore": 31.974921630094045,
-    "l_reject": 1.0,
     "l_long": 51.41011604945617,
     "l_creative": 93.16666666666667,
     "l_acg": 7.77,
-    "l_np": 30.246717820430398
+    "l_np": 30.246717820430398,
+    "l_reject_rv": 0
   },
   {
     "model": "DavidAU/L3-Dark_Mistress-The_Guilty_Pen-Uncensored-17.4B-GGUF",
     "size": 17.4,
     "quantization": "q4_k_m",
     "l_hardcore": 12.225705329153605,
-    "l_reject": 0.4166666666666667,
     "l_long": 46.52916207497656,
     "l_creative": 87,
-    "l_acg": 4.44
+    "l_acg": 4.44,
+    "l_reject_rv": 58.33333333333333
   },
   {
     "model": "CohereForAI/c4ai-command-r-08-2024",
     "size": 32.3,
     "quantization": "q4_k_s",
     "l_hardcore": 36.36,
-    "l_reject": 0.55,
     "l_long": 66.02860674582767,
     "l_creative": 92.09999999999998,
     "l_acg": 27.77,
-    "l_np": 22.37767346013845
+    "l_np": 22.37767346013845,
+    "l_reject_rv": 44.99999999999999
   },
   {
     "model": "grok-beta",
     "size": 314,
     "quantization": "f16",
     "l_hardcore": 50.470219435736674,
-    "l_reject": 1,
     "l_long": 74.74067294475033,
     "l_creative": 90.13333333333333,
     "l_acg": 14.44,
-    "l_np": 45.86
+    "l_np": 45.86,
+    "l_reject_rv": 0
   },
   {
     "model": "anthracite-org/magnum-v4-9b",
     "size": 9.24,
     "quantization": "q4_k_s",
     "l_hardcore": 34.90566037735849,
-    "l_reject": 0.8888888888888888,
     "l_long": 54.97595506523796,
     "l_creative": 81.13333333333334,
     "l_acg": 20.555555555555554,
-    "l_np": 27.04019756178699
+    "l_np": 27.04019756178699,
+    "l_reject_rv": 11.111111111111116
   },
   {
     "model": "anthracite-org/magnum-v4-22b",
     "size": 22.2,
     "quantization": "q4_k_s",
     "l_hardcore": 27.67295597484277,
-    "l_reject": 0.9722222222222222,
     "l_long": 56.87408151760139,
     "l_creative": 84.93333333333334,
     "l_acg": 3.88888888888889,
-    "l_np": 16.781240945173654
+    "l_np": 16.781240945173654,
+    "l_reject_rv": 2.777777777777779
+  },
+  {
+    "model": "TinyLlama/TinyLlama_v1.1",
+    "size": 1.1,
+    "quantization": "q6_k",
+    "l_hardcore": 1.257861635220126,
+    "l_long": null,
+    "l_creative": null,
+    "l_acg": -1.6666666666666667,
+    "l_np": 0,
+    "l_reject_rv": 34
+  },
+  {
+    "model": "anthracite-org/magnum-v4-27b",
+    "size": 27.2,
+    "quantization": "q4_k_s",
+    "l_hardcore": 33.64779874213836,
+    "l_long": 59.90044443835702,
+    "l_creative": 91.89999999999999,
+    "l_acg": 27.22222222222222,
+    "l_np": 31.240704690874267,
+    "l_reject_rv": 12
+  },
+  {
+    "model": "CohereForAI/aya-expanse-32b",
+    "size": 32.2,
+    "quantization": "q4_k_s",
+    "l_hardcore": 36.477987421383645,
+    "l_long": 70.99025147049771,
+    "l_creative": 90.33333333333333,
+    "l_np": 22.999517173563426,
+    "l_acg": 16.666666666666664,
+    "l_reject_rv": 5.555555555555558
+  },
+  {
+    "model": "Qwen/QwQ-32B-Preview",
+    "size": 32.2,
+    "quantization": "q4_k_s",
+    "l_hardcore": 41.82389937106918,
+    "l_long": 31.91180514636126,
+    "l_creative": 84.60000000000001,
+    "l_np": 42.0793789378002,
+    "l_acg": 22.77777777777778,
+    "l_reject_rv": 5.555555555555558
+  },
+  {
+    "model": "byroneverson/internlm2_5-20b-chat-abliterated",
+    "size": 19.9,
+    "quantization": "q4_k_m",
+    "l_hardcore": 35.53459119496855,
+    "l_long": 40.513706893174295,
+    "l_creative": 100,
+    "l_np": 25.397696415172987,
+    "l_acg": 3.3333333333333384,
+    "l_reject_rv": 19.444444444444443
+  },
+  {
+    "model": "allknowingroger/MixTAO-19B-pass",
+    "size": 19.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 8.80503144654088,
+    "l_reject_rv": 63.888888888888886,
+    "l_long": 49.16178347351046,
+    "l_creative": 91.39999999999999,
+    "l_np": 18.75413779958315,
+    "l_acg": 6.666666666666667
+  },
+  {
+    "model": "IlyaGusev/gemma-2-9b-it-abliterated",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "l_hardcore": 27.358490566037734,
+    "l_reject_rv": 91.66666666666666,
+    "l_long": 71.72644889202607,
+    "l_creative": 65.5,
+    "l_np": 35.01038282549306,
+    "l_acg": 20.555555555555554
   }
 ]

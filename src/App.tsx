@@ -388,7 +388,7 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
           </thead>
           <tbody>
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
+              <tr key={row.id} className="hover:font-black">
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
@@ -456,7 +456,7 @@ const n_fixed = (n: number, t = 2) => {
   return Number(n.toFixed(t));
 };
 
-function dataPrepare(data: Record<string, any>) {
+function dataPrepare(data: Record<string, any>, headers: string[]) {
   const { size, model, quantization, ...others } = data;
 
   // 计算 每个b的分数
@@ -483,10 +483,18 @@ function dataPrepare(data: Record<string, any>) {
         .filter(Boolean) as any[])
     : [];
 
+  const data_headers = headers.slice(3);
+  const average_score = others["average"]
+    ? others["average"]
+    : Object.values(others).reduce((a, b) => a + b, 0) / data_headers.length;
+
+  delete others["average"];
+
   const o1 = {
     model,
     size,
     quantization,
+    average: average_score,
     ...others,
     ...Object.fromEntries(pbs),
     ...Object.fromEntries(unquants),
@@ -543,7 +551,10 @@ const ExamplePage = () => {
   //   "un-pblr-eval(~)": n_fixed(unquant(x["lr-eval"], x.quantization) / x.size),
   // }));
   const [_data, setData] = useState<any[]>(datasets[0].data);
-  const data = useMemo(() => header_key_fix(_data.map(dataPrepare)), [_data]);
+  const data = useMemo(() => {
+    const headers = Object.keys(_data[0]);
+    return header_key_fix(_data.map((x) => dataPrepare(x, headers)));
+  }, [_data]);
   return (
     <div className="w-screen h-screen flex flex-col overflow-hidden">
       <header className="bg-slate-600 flex gap-2 px-2">

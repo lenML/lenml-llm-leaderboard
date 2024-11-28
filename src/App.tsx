@@ -35,6 +35,8 @@ function fuzzyMatch(pattern: string, str: string) {
   pattern =
     ".*" +
     pattern
+      .trim()
+      .replace(/\s/gi, "")
       .split("")
       .map((l: string) => `${escapeRegExp(l)}.*`)
       .join("");

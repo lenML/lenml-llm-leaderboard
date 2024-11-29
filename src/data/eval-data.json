@@ -24,9 +24,13 @@
   {
     "model": "AiCloser/Qwen2.5-32B-AGI",
     "size": 32.8,
-    "quantization": "q3_k_m",
-    "l_hardcore": 38.87,
-    "l_reject_rv": 84
+    "quantization": "q4_k_s",
+    "l_hardcore": 40.56603773584906,
+    "l_reject_rv": 77.77777777777779,
+    "l_long": 65.92327147357811,
+    "l_creative": 89.56666666666668,
+    "l_np": 31.42654857000855,
+    "l_acg": 16.666666666666664
   },
   {
     "model": "Goekdeniz-Guelmez/Josiefied-Qwen2.5-14B-Instruct-abliterated-v4",
@@ -67,8 +71,12 @@
     "model": "huihui-ai/Qwen2.5-7B-Instruct-abliterated-v2",
     "size": 7.62,
     "quantization": "q4_k_m",
-    "l_hardcore": 32.28,
-    "l_reject_rv": 87
+    "l_hardcore": 32.70440251572327,
+    "l_reject_rv": 88.88888888888889,
+    "l_long": 85.45387312063986,
+    "l_creative": 83.89999999999999,
+    "l_np": 33.0904738597239,
+    "l_acg": 13.333333333333334
   },
   {
     "model": "byroneverson/gemma-2-27b-it-abliterated",
@@ -165,11 +173,13 @@
   {
     "model": "IlyaGusev/gemma-2-2b-it-abliterated",
     "size": 2.61,
-    "quantization": "q8_0",
-    "l_hardcore": 16.3,
-    "l_long": 70.86505116479596,
-    "l_creative": 78.06666666666666,
-    "l_reject_rv": 78
+    "quantization": "q6_k",
+    "l_hardcore": 16.9811320754717,
+    "l_reject_rv": 77.77777777777779,
+    "l_long": 71.73455397462284,
+    "l_creative": 77.69999999999999,
+    "l_np": 3.6463178335045257,
+    "l_acg": 6.11111111111111
   },
   {
     "model": "natong19/Mistral-Nemo-Instruct-2407-abliterated",
@@ -447,5 +457,38 @@
     "l_creative": 65.5,
     "l_np": 35.01038282549306,
     "l_acg": 20.555555555555554
+  },
+  {
+    "model": "Lambent/qwen2.5-reinstruct-alternate-lumen-14B",
+    "size": 14.8,
+    "quantization": "q4_k_m",
+    "l_hardcore": 37.735849056603776,
+    "l_reject_rv": 11.111111111111116,
+    "l_long": 63.16200390494302,
+    "l_creative": 92.66666666666667,
+    "l_np": 40.35779931073713,
+    "l_acg": 24.444444444444446
+  },
+  {
+    "model": "AIDC-AI/Marco-o1",
+    "size": 7.62,
+    "quantization": "q4_k_m",
+    "l_hardcore": 33.0188679245283,
+    "l_reject_rv": 47.22222222222222,
+    "l_long": 77.27909119285796,
+    "l_creative": 92.06666666666666,
+    "l_np": 15.96877835480458,
+    "l_acg": 15
+  },
+  {
+    "model": "v000000/Qwen2.5-14B-Gutenberg-Instruct-Slerpeno",
+    "size": 14.8,
+    "quantization": "q4_k_m",
+    "l_hardcore": 39.308176100628934,
+    "l_reject_rv": 5.555555555555558,
+    "l_long": 64.99438632818833,
+    "l_creative": 93.43333333333334,
+    "l_np": 19.981867310239668,
+    "l_acg": 25.555555555555554
   }
 ]

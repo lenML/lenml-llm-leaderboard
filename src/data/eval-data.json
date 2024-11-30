@@ -249,11 +249,12 @@
     "model": "w4r10ck/SOLAR-10.7B-Instruct-v1.0-uncensored",
     "size": 10.7,
     "quantization": "q4_k_m",
-    "l_hardcore": 12.539184952978054,
-    "l_long": 39.61161443738214,
-    "l_creative": 97.89999999999999,
-    "l_acg": 6.66,
-    "l_reject_rv": 99
+    "l_hardcore": 12.264150943396226,
+    "l_reject_rv": 97.22222222222221,
+    "l_long": 40.666693645177986,
+    "l_creative": 97.06666666666666,
+    "l_np": 30.229112020846028,
+    "l_acg": 7.77777777777778
   },
   {
     "model": "AALF/gemma-2-27b-it-SimPO-37K-100steps",
@@ -490,5 +491,49 @@
     "l_creative": 93.43333333333334,
     "l_np": 19.981867310239668,
     "l_acg": 25.555555555555554
+  },
+  {
+    "model": "huihui-ai/Qwen2.5-Coder-3B-Instruct-abliterated",
+    "size": 3.09,
+    "quantization": "q6_k",
+    "l_hardcore": 26.729559748427672,
+    "l_reject_rv": 88.88888888888889,
+    "l_long": 51.507341396879646,
+    "l_creative": 99.5,
+    "l_np": 11.185295848865362,
+    "l_acg": 2.7777777777777763
+  },
+  {
+    "model": "sam-paech/Darkest-muse-v1",
+    "size": 10.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 28.930817610062892,
+    "l_reject_rv": 5.555555555555558,
+    "l_long": 84.20226776322998,
+    "l_creative": 57.70000000000001,
+    "l_np": 22.06298577700235,
+    "l_acg": 24.444444444444446
+  },
+  {
+    "model": "sam-paech/Quill-v1",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "l_hardcore": 29.559748427672954,
+    "l_reject_rv": 5.555555555555558,
+    "l_long": 79.84996021557392,
+    "l_creative": 48.06666666666666,
+    "l_np": 36.715514004623046,
+    "l_acg": 31.666666666666664
+  },
+  {
+    "model": "nbeerbower/Mistral-Nemo-Gutenberg-Doppel-12B-v2",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 38.36477987421384,
+    "l_reject_rv": 41.666666666666664,
+    "l_long": 56.364619393480446,
+    "l_creative": 93.43333333333332,
+    "l_np": 36.839942555427044,
+    "l_acg": 8.333333333333332
   }
 ]

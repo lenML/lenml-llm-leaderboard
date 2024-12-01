@@ -260,10 +260,12 @@
     "model": "AALF/gemma-2-27b-it-SimPO-37K-100steps",
     "size": 27.2,
     "quantization": "q4_k_s",
-    "l_hardcore": 31.03448275862069,
-    "l_long": 72.7901405321862,
-    "l_creative": 91.76666666666667,
-    "l_reject_rv": 13.890000000000002
+    "l_hardcore": 31.761006289308174,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 70.35036572891538,
+    "l_creative": 92.06666666666666,
+    "l_np": 44.1812805819529,
+    "l_acg": 32.22222222222222
   },
   {
     "model": "Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24",
@@ -535,5 +537,70 @@
     "l_creative": 93.43333333333332,
     "l_np": 36.839942555427044,
     "l_acg": 8.333333333333332
+  },
+  {
+    "model": "Nexusflow/Athene-70B",
+    "size": 70.6,
+    "quantization": "q2_xxs",
+    "l_hardcore": 26.10062893081761,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 49.7593172283244,
+    "l_creative": 90.8,
+    "l_np": 39.5366857083096,
+    "l_acg": 13.888888888888895
+  },
+  {
+    "model": "rombodawg/Rombos-LLM-V2.5-Qwen-32b",
+    "size": 32.8,
+    "quantization": "q4_k_m"
+  },
+  {
+    "model": "infly/OpenCoder-1.5B-Instruct",
+    "size": 1.91,
+    "quantization": "q6_k",
+    "l_hardcore": 10.377358490566039,
+    "l_reject_rv": 47.22222222222222,
+    "l_long": 22.039223509564277,
+    "l_creative": 93,
+    "l_np": 1.8257426752115329,
+    "l_acg": 8.333333333333332
+  },
+  {
+    "model": "TheDrummer/UnslopNemo-12B-v4.1-GGUF",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 36.79245283018868,
+    "l_reject_rv": 8.333333333333337,
+    "l_long": 44.17612763998968,
+    "l_creative": 80.76666666666667,
+    "l_np": 30.812809903051008,
+    "l_acg": 13.888888888888895
+  },
+  {
+    "model": "TheDrummer/Cydonia-22B-v1.3-GGUF",
+    "size": 22.2,
+    "quantization": "q4_k_m"
+  },
+  {
+    "model": "anthracite-org/magnum-v3-27b-kto",
+    "size": 27.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 31.446540880503143,
+    "l_reject_rv": 11.111111111111116,
+    "l_long": 48.86242232233042,
+    "l_creative": 84.73333333333333,
+    "l_np": 29.1993525163826,
+    "l_acg": 13.333333333333334
+  },
+  {
+    "model": "infly/OpenCoder-8B-Instruct",
+    "size": 7.77,
+    "quantization": "q4_k_m",
+    "l_hardcore": 28.930817610062892,
+    "l_reject_rv": 25,
+    "l_long": 34.882885253744064,
+    "l_creative": 99.5,
+    "l_np": 15.075652336756884,
+    "l_acg": 3.88888888888889
   }
 ]

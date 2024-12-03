@@ -579,7 +579,13 @@
   {
     "model": "TheDrummer/Cydonia-22B-v1.3-GGUF",
     "size": 22.2,
-    "quantization": "q4_k_m"
+    "quantization": "q4_k_m",
+    "l_hardcore": 21.069182389937108,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 54.36037593072415,
+    "l_creative": 92.89999999999999,
+    "l_np": 18.291433113383988,
+    "l_acg": 7.222222222222219
   },
   {
     "model": "anthracite-org/magnum-v3-27b-kto",
@@ -602,5 +608,16 @@
     "l_creative": 99.5,
     "l_np": 15.075652336756884,
     "l_acg": 3.88888888888889
+  },
+  {
+    "model": "princeton-nlp/gemma-2-9b-it-SimPO",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "l_hardcore": 28.930817610062892,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 71.68007401372978,
+    "l_creative": 87.56666666666666,
+    "l_np": 30.826057745106834,
+    "l_acg": 22.22222222222223
   }
 ]

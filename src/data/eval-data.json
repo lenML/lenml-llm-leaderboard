@@ -652,5 +652,16 @@
     "l_creative": 85.96666666666665,
     "l_np": 20.032323741667636,
     "l_acg": 13.888888888888895
+  },
+  {
+    "model": "huihui-ai/Qwen2.5-14B-Instruct-abliterated-v2",
+    "size": 14.8,
+    "quantization": "q4_k_m",
+    "l_hardcore": 37.735849056603776,
+    "l_reject_rv": 88.88888888888889,
+    "l_long": 75.77191174183017,
+    "l_creative": 92.8,
+    "l_np": 20.874359658709967,
+    "l_acg": 27.22222222222222
   }
 ]

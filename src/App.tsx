@@ -510,6 +510,9 @@ function dataPrepare(data: Record<string, any>, headers: string[]) {
   return o1;
 }
 
+/**
+ * 缺少的数据就填充 null
+ */
 function header_key_fix<T>(items: T[]) {
   let header_keys = items.map((x) => Object.keys(x)).flat();
   header_keys = [...new Set(header_keys)];
@@ -540,16 +543,6 @@ const datasets = [
 
 // 使用示例
 const ExamplePage = () => {
-  // const data = evalData.map((x) => ({
-  //   ...x,
-  //   // 每个b的得分
-  //   "pblh-eval(~)": n_fixed(x["lh-eval"] / x.size),
-  //   "pblr-eval(~)": n_fixed(x["lr-eval"] / x.size),
-  //   "un-lh-eval(~)": n_fixed(unquant(x["lh-eval"], x.quantization)),
-  //   "un-lr-eval(~)": n_fixed(unquant(x["lr-eval"], x.quantization)),
-  //   "un-pblh-eval(~)": n_fixed(unquant(x["lh-eval"], x.quantization) / x.size),
-  //   "un-pblr-eval(~)": n_fixed(unquant(x["lr-eval"], x.quantization) / x.size),
-  // }));
   const [_data, setData] = useState<any[]>(datasets[0].data);
   const data = useMemo(() => {
     const headers = Object.keys(_data[0]);

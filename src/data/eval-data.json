@@ -157,13 +157,6 @@
     "l_reject_rv": 14.000000000000002
   },
   {
-    "model": "MarinaraSpaghetti/NemoMix-Unleashed-12B",
-    "size": 12.2,
-    "quantization": "q4_k_m",
-    "l_hardcore": 19.12,
-    "l_reject_rv": 28.000000000000004
-  },
-  {
     "model": "huihui-ai/Qwen2.5-3B-Instruct-abliterated",
     "size": 3.09,
     "quantization": "q6_k",
@@ -663,5 +656,38 @@
     "l_creative": 92.8,
     "l_np": 20.874359658709967,
     "l_acg": 27.22222222222222
+  },
+  {
+    "model": "MarinaraSpaghetti/NemoMix-Unleashed-12B",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 40.88050314465409,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 49.09862602434891,
+    "l_creative": 87.13333333333334,
+    "l_np": 28.971311853641723,
+    "l_acg": 14.444444444444448
+  },
+  {
+    "model": "deepseek-chat",
+    "size": 236,
+    "quantization": "f16",
+    "l_hardcore": 55.9748427672956,
+    "l_reject_rv": 22.22222222222222,
+    "l_long": 75.08873641755063,
+    "l_creative": 88.93333333333334,
+    "l_np": 1.3510745736128351,
+    "l_acg": 53.8888888888889
+  },
+  {
+    "model": "mlabonne/Hermes-3-Llama-3.1-70B-lorablated",
+    "size": 70.6,
+    "quantization": "q2_xxs",
+    "l_hardcore": 27.044025157232703,
+    "l_reject_rv": 69.44444444444444,
+    "l_long": 50.65233151599157,
+    "l_creative": 78.73333333333335,
+    "l_np": 18.3632387097112,
+    "l_acg": 9.444444444444446
   }
 ]

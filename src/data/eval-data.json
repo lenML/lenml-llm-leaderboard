@@ -14,12 +14,12 @@
     "model": "zetasepic/Qwen2.5-32B-Instruct-abliterated-v2",
     "size": 32.8,
     "quantization": "q3_k_m",
-    "l_hardcore": 40.12,
-    "l_long": 86.70626347384285,
-    "l_creative": 88.66666666666667,
-    "l_acg": 26.66,
+    "l_hardcore": 40.25157232704403,
+    "l_reject_rv": 95,
+    "l_long": 81.33868266953142,
+    "l_creative": 88.10000000000001,
     "l_np": 47.47022721678598,
-    "l_reject_rv": 95
+    "l_acg": 26.666666666666668
   },
   {
     "model": "AiCloser/Qwen2.5-32B-AGI",
@@ -43,15 +43,12 @@
     "model": "TheDrummer/Star-Command-R-32B-v1",
     "size": 32.3,
     "quantization": "q3_k_m",
-    "l_hardcore": 37.3,
-    "l_reject_rv": 25
-  },
-  {
-    "model": "CohereForAI/aya-expanse-32b",
-    "size": 32.3,
-    "quantization": "q3_k_m",
-    "l_hardcore": 37.3,
-    "l_reject_rv": 6.000000000000005
+    "l_hardcore": 38.9937106918239,
+    "l_reject_rv": 33.333333333333336,
+    "l_long": 45.69829116930984,
+    "l_creative": 85.53333333333335,
+    "l_np": 25.551389009740653,
+    "l_acg": 30.555555555555564
   },
   {
     "model": "anthracite-org/magnum-v4-27b",
@@ -125,13 +122,6 @@
     "l_reject_rv": 0
   },
   {
-    "model": "princeton-nlp/gemma-2-9b-it-SimPO",
-    "size": 9.24,
-    "quantization": "q4_k_m",
-    "l_hardcore": 26.6,
-    "l_reject_rv": 12
-  },
-  {
     "model": "CohereForAI/aya-expanse-8b",
     "size": 8.03,
     "quantization": "q4_k_m",
@@ -178,8 +168,12 @@
     "model": "natong19/Mistral-Nemo-Instruct-2407-abliterated",
     "size": 12.2,
     "quantization": "q4_k_m",
-    "l_hardcore": 15.67,
-    "l_reject_rv": 73
+    "l_hardcore": 36.79245283018868,
+    "l_reject_rv": 86.11111111111111,
+    "l_long": 53.57792100798315,
+    "l_creative": 86.53333333333335,
+    "l_np": 31.212807411929678,
+    "l_acg": 13.333333333333334
   },
   {
     "model": "nvidia/Nemotron-4-Mini-Hindi-4B-Instruct",
@@ -213,8 +207,12 @@
     "model": "fblgit/TheBeagle-v2beta-32B-MGS",
     "size": 32.8,
     "quantization": "q4_k_s",
-    "l_hardcore": 41.37,
-    "l_reject_rv": 6.000000000000005
+    "l_hardcore": 41.82389937106918,
+    "l_reject_rv": 11.111111111111116,
+    "l_long": 77.84300480031881,
+    "l_creative": 84.53333333333335,
+    "l_np": 47.28889964957902,
+    "l_acg": 24.444444444444446
   },
   {
     "model": "SaisExperiments/Gemma-2-2B-Opus-Instruct",

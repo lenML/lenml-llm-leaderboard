@@ -1,5 +1,16 @@
 [
   {
+    "model": "human-baseline",
+    "size": 86,
+    "quantization": "f16",
+    "l_hardcore": 80.11,
+    "l_reject_rv": 100,
+    "l_creative": 82,
+    "l_long": 90,
+    "l_acg": 61.45,
+    "l_np": 48.7
+  },
+  {
     "model": "fblgit/UNA-SimpleSmaug-34b-v1beta",
     "size": 34.4,
     "quantization": "iq3_ks",
@@ -380,8 +391,8 @@
     "size": 1.1,
     "quantization": "q6_k",
     "l_hardcore": 1.257861635220126,
-    "l_long": null,
-    "l_creative": null,
+    "l_long": 0,
+    "l_creative": 0,
     "l_acg": -1.6666666666666667,
     "l_np": 0,
     "l_reject_rv": 34

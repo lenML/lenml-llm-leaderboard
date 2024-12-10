@@ -13,13 +13,13 @@
   {
     "model": "fblgit/UNA-SimpleSmaug-34b-v1beta",
     "size": 34.4,
-    "quantization": "iq3_ks",
-    "l_hardcore": 43.26,
-    "l_reject_rv": 14.000000000000002,
-    "l_creative": null,
-    "l_long": null,
-    "l_acg": null,
-    "l_np": null
+    "quantization": "q4_k_s",
+    "l_hardcore": 46.855345911949684,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 65.34876655035588,
+    "l_creative": 93.63333333333333,
+    "l_np": 33.50431810412173,
+    "l_acg": 35.555555555555564
   },
   {
     "model": "zetasepic/Qwen2.5-32B-Instruct-abliterated-v2",
@@ -554,7 +554,13 @@
   {
     "model": "rombodawg/Rombos-LLM-V2.5-Qwen-32b",
     "size": 32.8,
-    "quantization": "q4_k_m"
+    "quantization": "q4_k_m",
+    "l_hardcore": 40.56603773584906,
+    "l_reject_rv": 8.333333333333337,
+    "l_long": 71.1161246384246,
+    "l_creative": 81.99999999999999,
+    "l_np": 44.81176061326696,
+    "l_acg": 27.22222222222222
   },
   {
     "model": "infly/OpenCoder-1.5B-Instruct",
@@ -709,5 +715,6 @@
     "l_creative": 82.66666666666667,
     "l_np": 42.1832992146105,
     "l_acg": 9.444444444444446
-  }
+  },
+  {}
 ]

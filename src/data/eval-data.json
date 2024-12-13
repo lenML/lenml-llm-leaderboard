@@ -716,5 +716,26 @@
     "l_np": 42.1832992146105,
     "l_acg": 9.444444444444446
   },
-  {}
+  {
+    "model": "Saxo/Linkbricks-Horizon-AI-Korean-Superb-27B",
+    "size": 27.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 28.61635220125786,
+    "l_reject_rv": 11.111111111111116,
+    "l_long": 72.42349767600757,
+    "l_creative": 84.46666666666665,
+    "l_np": 36.79172276159477,
+    "l_acg": 26.111111111111114
+  },
+  {
+    "model": "NeverSleep/Lumimaid-v0.2-12B",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 43.39622641509434,
+    "l_reject_rv": 75,
+    "l_long": 36.48928967938965,
+    "l_creative": 81.76666666666667,
+    "l_np": 15.265753069021581,
+    "l_acg": 12.77777777777778
+  }
 ]

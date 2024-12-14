@@ -3,12 +3,43 @@
     "model": "human-baseline",
     "size": 86,
     "quantization": "f16",
+    "score@1": null,
+    "score@2": null,
     "l_hardcore": 80.11,
     "l_reject_rv": 100,
     "l_creative": 82,
     "l_long": 90,
     "l_acg": 61.45,
-    "l_np": 48.7
+    "l_np": 48.7,
+
+    "__meta__": {
+      "extra_columns": [
+        {
+          "type": "weight",
+          "name": "score@1",
+          "weights": {
+            "l_np": 2,
+            "l_acg": 2,
+            "l_hardcore": 1,
+            "l_reject_rv": 0.5,
+            "l_long": 1,
+            "l_creative": 1.5
+          }
+        },
+        {
+          "type": "weight",
+          "name": "score@2",
+          "weights": {
+            "l_np": 2,
+            "l_acg": 1,
+            "l_hardcore": 1,
+            "l_reject_rv": 0,
+            "l_long": 1,
+            "l_creative": 0.5
+          }
+        }
+      ]
+    }
   },
   {
     "model": "fblgit/UNA-SimpleSmaug-34b-v1beta",

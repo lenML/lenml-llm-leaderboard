@@ -26,6 +26,7 @@ import {
   getContrastColor,
 } from "./components/colors";
 import { RangeSlider } from "./components/RangeSlider";
+import { LeaderboardData } from "./LeaderboardData";
 
 function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -117,9 +118,14 @@ const isNone = (x: any): x is undefined | null => x === null || x === undefined;
 
 interface EnhancedTableProps {
   data: JsonData[];
+
+  default_column_visibility?: Record<string, boolean>;
 }
 
-function EnhancedTable({ data: _data }: EnhancedTableProps) {
+function EnhancedTable({
+  data: _data,
+  default_column_visibility,
+}: EnhancedTableProps) {
   const minmaxs = useMemo(() => {
     // 统计各个列的最大最小值
     const num_headers = Object.keys(_data[0]).filter(
@@ -144,20 +150,9 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
     []
   );
   const [globalFilter, setGlobalFilter] = React.useState("");
-  const [columnVisibility, setColumnVisibility] = React.useState({});
-  useLayoutEffect(() => {
-    const ret = {} as Record<string, boolean>;
-    Object.keys(_data[0])
-      .filter((x) => x.startsWith("pb-") || x.startsWith("uq-"))
-      .forEach((key) => {
-        ret[key] = false;
-      });
-    // 如果 quantization 全为空也隐藏
-    if (_data[0].quantization === undefined) {
-      ret["quantization"] = false;
-    }
-    setColumnVisibility(ret);
-  }, [_data]);
+  const [columnVisibility, setColumnVisibility] = React.useState(
+    default_column_visibility
+  );
 
   const [columnOrder, setColumnOrder] = React.useState<ColumnOrderState>([]);
   const [pagination, setPagination] = React.useState({
@@ -452,81 +447,6 @@ function EnhancedTable({ data: _data }: EnhancedTableProps) {
   );
 }
 
-const n_fixed = (n: number, t = 2) => {
-  return Number(n.toFixed(t));
-};
-
-function dataPrepare(data: Record<string, any>, headers: string[]) {
-  const { size, model, quantization, ...others } = data;
-
-  // 计算 每个b的分数
-  const pbs = Object.entries(others)
-    .map(([k, v]) => {
-      if (typeof v !== "number") {
-        return null;
-      }
-      if (size <= 0) {
-        return [`pb-${k}`, 0];
-      }
-      return [`pb-${k}`, v / size];
-    })
-    .filter(Boolean) as any[];
-  // 计算 量化分数，如果有量化的话
-  const unquants = quantization
-    ? (Object.entries(others)
-        .map(([k, v]) => {
-          if (typeof v !== "number") {
-            return null;
-          }
-          return [`uq-${k}`, unquant(v, quantization)];
-        })
-        .filter(Boolean) as any[])
-    : [];
-
-  const data_headers = headers.slice(3);
-  const average_score = others["average"]
-    ? others["average"]
-    : Object.values(others).reduce((a, b) => a + b, 0) / data_headers.length;
-
-  delete others["average"];
-
-  const o1 = {
-    model,
-    size,
-    quantization,
-    average: average_score,
-    ...others,
-    ...Object.fromEntries(pbs),
-    ...Object.fromEntries(unquants),
-  };
-
-  for (const [k, v] of Object.entries(o1)) {
-    if (typeof v !== "number") {
-      continue;
-    }
-    o1[k] = n_fixed(v);
-  }
-
-  return o1;
-}
-
-/**
- * 缺少的数据就填充 null
- */
-function header_key_fix<T>(items: T[]) {
-  let header_keys = items.map((x) => Object.keys(x)).flat();
-  header_keys = [...new Set(header_keys)];
-
-  for (const item of items) {
-    for (const k of header_keys) {
-      if (k in (item as any)) continue;
-      item[k] = null;
-    }
-  }
-
-  return items;
-}
-
 const datasets = [
   {
     name: "LenML-eval",
@@ -542,11 +462,10 @@ const datasets = [
 }[];
 
 // 使用示例
-const ExamplePage = () => {
+const App = () => {
   const [_data, setData] = useState<any[]>(datasets[0].data);
   const data = useMemo(() => {
-    const headers = Object.keys(_data[0]);
-    return header_key_fix(_data.map((x) => dataPrepare(x, headers)));
+    return new LeaderboardData(_data);
   }, [_data]);
   return (
     <div className="w-screen h-screen flex flex-col overflow-hidden">
@@ -588,9 +507,12 @@ const ExamplePage = () => {
           github
         </a>
       </header>
-      <EnhancedTable data={data} />
+      <EnhancedTable
+        data={data.data}
+        default_column_visibility={data.get_column_visibility()}
+      />
     </div>
   );
 };
 
-export default ExamplePage;
+export default App;

@@ -153,6 +153,9 @@ function EnhancedTable({
   const [columnVisibility, setColumnVisibility] = React.useState(
     default_column_visibility
   );
+  useLayoutEffect(() => {
+    setColumnVisibility(default_column_visibility);
+  }, [default_column_visibility]);
 
   const [columnOrder, setColumnOrder] = React.useState<ColumnOrderState>([]);
   const [pagination, setPagination] = React.useState({

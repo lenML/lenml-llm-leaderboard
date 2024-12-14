@@ -737,5 +737,27 @@
     "l_creative": 81.76666666666667,
     "l_np": 15.265753069021581,
     "l_acg": 12.77777777777778
+  },
+  {
+    "model": "nbeerbower/mistral-nemo-bophades-12B",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 35.53459119496855,
+    "l_reject_rv": 52.77777777777778,
+    "l_long": 51.617711093815245,
+    "l_creative": 90.76666666666667,
+    "l_np": 24.665146931004532,
+    "l_acg": 11.111111111111105
+  },
+  {
+    "model": "nbeerbower/mistral-nemo-wissenschaft-12B",
+    "size": 12.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 36.16352201257861,
+    "l_reject_rv": 19.444444444444443,
+    "l_long": 44.78966824050486,
+    "l_creative": 85.10000000000001,
+    "l_np": 29.409190253650912,
+    "l_acg": 19.44444444444444
   }
 ]

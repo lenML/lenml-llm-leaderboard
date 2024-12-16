@@ -182,13 +182,6 @@
     "l_reject_rv": 50
   },
   {
-    "model": "byroneverson/Mistral-Small-Instruct-2409-abliterated",
-    "size": 12.2,
-    "quantization": "q4_k_m",
-    "l_hardcore": 22.88,
-    "l_reject_rv": 14.000000000000002
-  },
-  {
     "model": "huihui-ai/Qwen2.5-3B-Instruct-abliterated",
     "size": 3.09,
     "quantization": "q6_k",
@@ -801,5 +794,27 @@
     "l_creative": 83.06666666666666,
     "l_np": 30.274032465285956,
     "l_acg": 9.444444444444446
+  },
+  {
+    "model": "nbeerbower/Mistral-Small-Drummer-22B",
+    "size": 22.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 23.58490566037736,
+    "l_reject_rv": 13.888888888888884,
+    "l_long": 63.3918852516451,
+    "l_creative": 89.7,
+    "l_np": 23.772345717016602,
+    "l_acg": 8.888888888888886
+  },
+  {
+    "model": "byroneverson/Mistral-Small-Instruct-2409-abliterated",
+    "size": 22.2,
+    "quantization": "q4_k_m",
+    "l_hardcore": 23.58490566037736,
+    "l_reject_rv": 77.77777777777779,
+    "l_long": 59.35205245271774,
+    "l_creative": 91.93333333333334,
+    "l_np": 16.19664132391164,
+    "l_acg": 6.666666666666667
   }
 ]

@@ -96,8 +96,12 @@
     "model": "anthracite-org/magnum-v4-27b",
     "size": 27.2,
     "quantization": "q4_k_m",
-    "l_hardcore": 36.36,
-    "l_reject_rv": 0
+    "l_hardcore": 34.90566037735849,
+    "l_reject_rv": 2.777777777777779,
+    "l_long": 72.23146726419081,
+    "l_creative": 93.03333333333332,
+    "l_np": 30.992402338537005,
+    "l_acg": 22.77777777777778
   },
   {
     "model": "huihui-ai/Qwen2.5-Coder-32B-Instruct-abliterated",

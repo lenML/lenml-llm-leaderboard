@@ -1,11 +1,34 @@
 import React, { useState } from "react";
 
+const NumInput = ({
+  value,
+  onChange,
+}: {
+  value: number;
+  onChange: (value: number) => void;
+}) => {
+  return (
+    <div className="flex items-center space-x-2">
+      <input
+        type="number"
+        className="w-10 border border-gray-300 rounded"
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+      />
+    </div>
+  );
+};
+
 export const RangeSlider = ({
   defaultValue = [0, 100],
   onChange,
+  min = 0,
+  max = 500,
 }: {
   defaultValue: [number, number];
   onChange?: (value: [number, number]) => void;
+  min?: number;
+  max?: number;
 }) => {
   const [modelSizeRange, setModelSizeRange] = useState(defaultValue);
   const [initialRange] = useState(defaultValue); // 初始值
@@ -28,27 +51,41 @@ export const RangeSlider = ({
           <input
             type="range"
             className="w-full"
-            min={0}
-            max={500}
+            min={min}
+            max={max}
             value={modelSizeRange[0]}
             onChange={(e) =>
               setModelSizeRange([Number(e.target.value), modelSizeRange[1]])
             }
           />
-          <span className="text-sm font-medium">{modelSizeRange[0]}</span>
+          <span className="text-sm font-medium">
+            <NumInput
+              value={modelSizeRange[0]}
+              onChange={(value) =>
+                setModelSizeRange([value, modelSizeRange[1]])
+              }
+            />
+          </span>
         </div>
         <div className="flex items-center space-x-2 mt-2">
           <input
             type="range"
             className="w-full"
-            min={0}
-            max={500}
+            min={min}
+            max={max}
             value={modelSizeRange[1]}
             onChange={(e) =>
               setModelSizeRange([modelSizeRange[0], Number(e.target.value)])
             }
           />
-          <span className="text-sm font-medium">{modelSizeRange[1]}</span>
+          <span className="text-sm font-medium">
+            <NumInput
+              value={modelSizeRange[1]}
+              onChange={(value) =>
+                setModelSizeRange([modelSizeRange[0], value])
+              }
+            />
+          </span>
         </div>
       </div>
 

@@ -163,7 +163,7 @@ function EnhancedTable({
     pageSize: 25,
   });
 
-  const [sizeRange, setSizeRange] = useState([0, 500] as [number, number]);
+  const [sizeRange, setSizeRange] = useState([0, 600] as [number, number]);
   const data = React.useMemo(() => {
     return _data.filter(
       (row) => row.size >= sizeRange[0] && row.size <= sizeRange[1]
@@ -304,6 +304,7 @@ function EnhancedTable({
             <div className="font-bold mb-2">Model Size Range:</div>
             <div className="flex flex-wrap gap-2">
               <RangeSlider
+                max={600}
                 defaultValue={sizeRange}
                 onChange={(value) => {
                   const min = Math.min(...value);

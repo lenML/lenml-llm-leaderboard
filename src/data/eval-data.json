@@ -154,13 +154,6 @@
     "l_reject_rv": 92
   },
   {
-    "model": "ifable/gemma-2-Ifable-9B",
-    "size": 9.24,
-    "quantization": "q4_k_m",
-    "l_hardcore": 29.5,
-    "l_reject_rv": 12
-  },
-  {
     "model": "TheDrummer/Tiger-Gemma-9B-v3",
     "size": 9.24,
     "quantization": "q4_k_m",
@@ -853,5 +846,16 @@
     "l_creative": 78.43333333333334,
     "l_np": 46.26982932694913,
     "l_acg": 15.555555555555554
+  },
+  {
+    "model": "ifable/gemma-2-Ifable-9B",
+    "size": 9.24,
+    "quantization": "q4_k_m",
+    "l_hardcore": 29.874213836477985,
+    "l_reject_rv": 11.111111111111116,
+    "l_long": 68.81987591847233,
+    "l_creative": 89.86666666666667,
+    "l_np": 25.049316500466524,
+    "l_acg": 26.111111111111114
   }
 ]

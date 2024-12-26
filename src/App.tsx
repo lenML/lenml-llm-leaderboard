@@ -32,7 +32,11 @@ function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function fuzzyMatch(pattern: string, str: string) {
+function fuzzyMatch(pattern: string, text: string) {
+  // NOTE: ignore case
+  pattern = pattern.toLowerCase();
+  text = text.toLowerCase();
+
   pattern =
     ".*" +
     pattern
@@ -42,7 +46,7 @@ function fuzzyMatch(pattern: string, str: string) {
       .map((l: string) => `${escapeRegExp(l)}.*`)
       .join("");
   const re = new RegExp(pattern);
-  return re.test(str);
+  return re.test(text);
 }
 
 // 通用类型定义

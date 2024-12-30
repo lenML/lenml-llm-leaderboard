@@ -167,11 +167,18 @@ function EnhancedTable({
     pageSize: 25,
   });
 
-  const [sizeRange, setSizeRange] = useState([0, 600] as [number, number]);
+  const [sizeRange, setSizeRange] = useState([0, 100] as [number, number]);
   const data = React.useMemo(() => {
-    return _data.filter(
-      (row) => row.size >= sizeRange[0] && row.size <= sizeRange[1]
-    );
+    return _data.filter((row) => {
+      let [min, max] = [Math.min(...sizeRange), Math.max(...sizeRange)];
+      if (min === 0) {
+        min = -Infinity;
+      }
+      if (max >= 100) {
+        max = Infinity;
+      }
+      return row.size >= min && row.size <= max;
+    });
   }, [_data, sizeRange]);
   // 自动生成列配置
   const generateColumns = React.useMemo(() => {
@@ -308,7 +315,7 @@ function EnhancedTable({
             <div className="font-bold mb-2">Model Size Range:</div>
             <div className="flex flex-wrap gap-2">
               <RangeSlider
-                max={600}
+                max={100}
                 defaultValue={sizeRange}
                 onChange={(value) => {
                   const min = Math.min(...value);
